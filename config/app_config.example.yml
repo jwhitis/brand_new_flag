@@ -1,15 +1,18 @@
 development:
   aws_access_key_id: abc123
   aws_secret_access_key: abc123
+  aws_bucket: bucket_name
   facebook_app_id: abc123
   google_analytics_id: abc123
 production:
   aws_access_key_id: abc123
   aws_secret_access_key: abc123
+  aws_bucket: bucket_name
   facebook_app_id: abc123
   google_analytics_id: abc123
 test:
   aws_access_key_id: abc123
   aws_secret_access_key: abc123
+  aws_bucket: bucket_name
   facebook_app_id: abc123
   google_analytics_id: abc123
