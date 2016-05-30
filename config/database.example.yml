@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: brand_new_flag_development
+
+test:
+  <<: *default
+  database: brand_new_flag_test
+
+production:
+  <<: *default
+  database: brand_new_flag_production
+  username: brand_new_flag
+  password: <%= ENV['BRAND_NEW_FLAG_DATABASE_PASSWORD'] %>
