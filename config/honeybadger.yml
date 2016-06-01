@@ -1,2 +1,0 @@
----
-api_key: '<%= AppConfig["honeybadger_api_key"] %>'
