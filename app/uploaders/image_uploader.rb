@@ -1,17 +1,12 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::MiniMagick
+  include Cloudinary::CarrierWave
 
-  storage :fog
-
-  def store_dir
-    "uploads/#{model.class.to_s.underscore.pluralize}/#{model.id}/#{mounted_as}"
-  end
-
-  version :square do
-    process resize_to_fill: [400, 400]
-  end
+  cloudinary_transformation transformation: [
+    { width: 400, height: 400, crop: :fill },
+    { overlay: "flag_overlay_green" }
+  ]
 
   def extension_white_list
     %w(jpg jpeg gif png)
