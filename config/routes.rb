@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   root "home#index"
-  resources :photos, only: :create
+  post "photos/preview", to: "photos#preview", as: :preview_photo
+  resources :photos, only: :create do
+    get :download, on: :member
+  end
 end

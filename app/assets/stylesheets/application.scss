@@ -3,3 +3,16 @@
 @import "variables";
 @import "layouts";
 @import "home";
+
+div.photo-preview {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+
+  img.overlay {
+    &:not(:first-child) {
+      display: none;
+    }
+  }
+}

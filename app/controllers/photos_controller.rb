@@ -1,21 +1,35 @@
 class PhotosController < ApplicationController
 
-  def create
+  def preview
     @photo = Photo.new(photo_params)
+    @photos = Photo.all
 
-    if @photo.save
-      redirect_to root_path, notice: "Your profile photo has been created!"
-    else
-      @photos = Photo.all
+    if @photo.invalid?
       flash[:alert] = "Please enter your email address and choose an image in one of these formats: #{extension_white_list}"
       render "home/index"
     end
   end
 
+  def create
+    @photo = Photo.new(photo_params)
+    @photos = Photo.all
+
+    if @photo.save
+      render :share
+    else
+      flash[:alert] = "Oops! Something went wrong. Please try again."
+      render "home/index"
+    end
+  end
+
+  def download
+    # Send data
+  end
+
   private
 
   def photo_params
-    params.require(:photo).permit(:creator_email, :image)
+    params.require(:photo).permit(:creator_email, :image, :image_cache, :color)
   end
 
   def extension_white_list

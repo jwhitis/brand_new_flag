@@ -16,3 +16,6 @@
 /config/database.yml
 /config/app_config.yml
 /.powenv
+
+# Ignore uploaded files.
+/public/uploads
