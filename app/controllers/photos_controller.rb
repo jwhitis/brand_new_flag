@@ -15,6 +15,7 @@ class PhotosController < ApplicationController
     @photos = Photo.all
 
     if @photo.save
+      @photos = @photos.where.not(id: @photo.id)
       render :share
     else
       flash[:alert] = "Oops! Something went wrong. Please try again."
@@ -23,7 +24,9 @@ class PhotosController < ApplicationController
   end
 
   def download
-    # Send data
+    @photo = Photo.find(params[:id])
+    data = open(@photo.image_url)
+    send_data data.read, filename: filename
   end
 
   private
@@ -34,6 +37,12 @@ class PhotosController < ApplicationController
 
   def extension_white_list
     @photo.image.extension_white_list.map(&:upcase).join(", ")
+  end
+
+  def filename
+    timestamp = Time.now.to_s(:number)
+    extension = @photo.image.format
+    "brand_new_flag_#{timestamp}.#{extension}"
   end
 
 end
