@@ -46,14 +46,6 @@
   </div>
 </div>
 
-<h2>Gallery</h2>
-
-<div id="gallery">
-  <% @photos.each do |photo| %>
-    <div class="photo" style="background-image: url(<%= photo.image_url %>)"></div>
-  <% end %>
-</div>
-
 <script type="text/javascript">
   $("input#photo_creator_email, input#photo_image").change(function() {
     var value = $(this).val();

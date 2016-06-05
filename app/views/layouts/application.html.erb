@@ -23,6 +23,8 @@
     </header>
 
     <%= yield %>
+
+    <%= render "photos/gallery", photos: @photos %>
   </div>
 </body>
 </html>

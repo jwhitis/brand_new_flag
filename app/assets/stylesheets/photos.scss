@@ -12,24 +12,6 @@ form#new_photo {
   div.form-group {
     position: relative;
 
-    div.star {
-      position: absolute;
-      left: -50px;
-
-      i.fa {
-        font-size: 42px;
-        line-height: 40px;
-        color: $gold;
-      }
-
-      span {
-        position: absolute;
-        left: 16px;
-        line-height: 40px;
-        color: white;
-      }
-    }
-
     > i.fa {
       position: absolute;
       right: -40px;
@@ -160,6 +142,68 @@ div#photo-preview {
 
     &:not(:first-child) {
       opacity: 0;
+    }
+  }
+}
+
+div#share {
+  margin-top: 20px;
+
+  h3, div.step {
+    width: calc(100% - 50px);
+    float: right;
+  }
+
+  h3 {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $dark-blue;
+  }
+
+  div.step {
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 16px;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+
+    a.button {
+      background-color: $dark-red;
+    }
+
+    a:not(.button) {
+      font-weight: normal;
+      text-decoration: underline;
+      color: $dark-red;
+    }
+  }
+
+  div.photo {
+    width: 290px;
+    height: 290px;
+    margin: 0 auto;
+
+    & + a.button {
+      width: 290px;
+      margin: 20px auto 15px auto;
+      display: block;
+      background-color: $dark-red;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  div#share {
+    h2 {
+      font-size: 26px;
+    }
+
+    a.button {
+      font-size: 16px;
     }
   }
 }

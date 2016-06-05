@@ -1,6 +1,37 @@
 <% content_for :header, pre_order_button(class: "hidden-xs") %>
 
-<h2>Share!</h2>
-<%= image_tag @photo.image_url %>
-<%= link_to "Download My Photo", download_photo_path(@photo) %>
-<%= link_to "Create Another Photo", root_path %>
+<div id="share" class="row">
+  <h2>Share Your Photo</h2>
+
+  <div class="col-sm-7 clearfix">
+    <div class="step">
+      <%= star(1) %>
+      <%= link_to "Download My Photo", download_photo_path(@photo), class: "button" %>
+    </div>
+
+    <h3>For Facebook:</h3>
+    <div class="step">
+      <%= star(2) %>
+      Log into your <%= link_to "Facebook", "https://www.facebook.com", target: "_blank" %> account, go to your profile page, and click the camera icon in the corner of your profile photo.
+    </div>
+    <div class="step">
+      <%= star(3) %>
+      Click "Upload Photo", and select the photo you just downloaded. It should look like brand_new_flag_20160605094226.png. Then, click "Save".
+    </div>
+
+    <h3>For Twitter:</h3>
+    <div class="step">
+      <%= star(2) %>
+      Log into your <%= link_to "Twitter", "https://twitter.com", target: "_blank" %> account, go to your profile page, and click the "Edit profile" button on the right side of the page.
+    </div>
+    <div class="step">
+      <%= star(3) %>
+      Click your profile photo, choose "Upload photo", and select the photo you just downloaded. It should look like brand_new_flag_20160605094226.png. Then, click "Apply".
+    </div>
+  </div>
+
+  <div class="col-sm-5">
+    <div class="photo" style="background-image: url(<%= @photo.image_url %>)"></div>
+    <%= link_to "Create Another Photo", root_path, class: "button" %>
+  </div>
+</div>

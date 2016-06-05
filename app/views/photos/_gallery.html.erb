@@ -1,0 +1,7 @@
+<h2>Gallery</h2>
+
+<div id="gallery">
+  <% photos.each do |photo| %>
+    <div class="photo" style="background-image: url(<%= photo.image_url %>)"></div>
+  <% end %>
+</div>

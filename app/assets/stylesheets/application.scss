@@ -47,6 +47,24 @@ input[type="submit"], button:not(.close), a.button {
   }
 }
 
+div.star {
+  position: absolute;
+  left: -50px;
+
+  i.fa {
+    font-size: 42px;
+    line-height: 40px;
+    color: $gold;
+  }
+
+  span {
+    position: absolute;
+    left: 16px;
+    line-height: 40px;
+    color: white;
+  }
+}
+
 div.photo {
   border: 2px solid rgba(black, .25);
   border-radius: 10px;
