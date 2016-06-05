@@ -4,6 +4,7 @@ ruby '2.3.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'pg', '~> 0.15'
 gem 'pry-rails', group: [:development, :test]
