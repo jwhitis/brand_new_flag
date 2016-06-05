@@ -1,14 +1,73 @@
-<%= form_for @photo, url: preview_photo_path do |f| %>
-  <div class="form-group">
-    <%= f.label :creator_email, class: "sr-only" %>
-    <%= f.email_field :creator_email, placeholder: "Email Address" %>
+<% content_for :header do %>
+  <div class="callout">
+    <h1>"Brand New Flag"</h1>
+    <p><i>Available September 1<sup>st</sup></i></p>
+    <p>
+      Show your support for <b>TCG</b> by creating a custom profile photo to use on Facebook and Twitter.
+      One fan will receive a free signed copy of the new album <b>one week</b> before the official release date.&nbsp;**
+    </p>
   </div>
 
-  <div class="form-group">
-    <%= f.label :image, class: "sr-only" %>
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
-  </div>
-
-  <%= f.submit "Continue" %>
+  <%= pre_order_button(class: "hidden-xs") %>
 <% end %>
+
+<div class="row">
+  <div class="col-sm-7 clearfix">
+    <small class="disclaimer">
+      ** You don't have to use the photo on Facebook or Twitter to enter the contest. Just complete the form below, and click "SAVE MY PHOTO" on the next page.
+    </small>
+
+    <%= form_for @photo, url: preview_photo_path do |f| %>
+      <div class="form-group">
+        <%= star(1) %>
+        <%= fa_icon("check-circle-o") %>
+        <%= f.label :creator_email, class: "sr-only" %>
+        <%= f.email_field :creator_email, placeholder: "Enter your email address." %>
+      </div>
+
+      <div class="form-group">
+        <%= star(2) %>
+        <%= fa_icon("check-circle-o") %>
+        <button type="button" id="image-btn">Pick A Photo</button>
+        <%= f.label :image, class: "sr-only" %>
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
+      </div>
+
+      <div class="form-group">
+        <%= star(3) %>
+        <%= f.submit "Pick A Color", class: "disabled" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-5">
+    <div id="example-photo" class="photo hidden-xs"></div>
+  </div>
+</div>
+
+<h2>Gallery</h2>
+
+<div id="gallery">
+  <% @photos.each do |photo| %>
+    <div class="photo" style="background-image: url(<%= photo.image_url %>)"></div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $("input#photo_creator_email, input#photo_image").change(function() {
+    var value = $(this).val();
+    if (value) { $(this).siblings("i.fa").fadeIn(300) };
+    enableSubmitButton();
+  });
+
+  $("button#image-btn").click(function() {
+    $("input#photo_image").click();
+  });
+
+  function enableSubmitButton() {
+    var email = $("input#photo_creator_email").val();
+    var image = $("input#photo_image").val();
+    if (email && image) { $("input[type='submit']").removeClass("disabled") };
+  }
+</script>

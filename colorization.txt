@@ -1,0 +1,26 @@
+Overlay Colorization Settings
+
+# Red
+H: 350
+S: 70
+L: 0
+
+# Gold
+H: 60
+S: 60
+L: 0
+
+# Green
+H: 95
+S: 50
+L: 0
+
+# Blue
+H: 180
+S: 60
+L: 0
+
+# Purple
+H: 280
+S: 50
+L: 0

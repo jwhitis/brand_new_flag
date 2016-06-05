@@ -1,0 +1,14 @@
+<% flash.each do |name, message| %>
+  <div class="alert alert-dismissable flash flash-<%= name %>">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <div class="container"><%= message %></div>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  window.setTimeout(function() {
+    $("div.flash").fadeOut(300, function() {
+      $(this).alert("close");
+    });
+  }, 10000);
+</script>

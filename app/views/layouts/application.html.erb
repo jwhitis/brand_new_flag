@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brand New Flag</title>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:300,400,700" %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -12,14 +13,16 @@
 </head>
 <body>
   <%= render "layouts/facebook_js" %>
-  <%= render "layouts/flash_messages" %>
+  <%= render "layouts/flash" %>
 
-  <h1>Brand New Flag</h1>
+  <div id="top-bar"></div>
 
-  <%= yield %>
+  <div class="container">
+    <header class="<%= "mini" unless header_has_callout? %>">
+      <%= content_for :header %>
+    </header>
 
-  <% @photos.each do |photo| %>
-    <%= image_tag photo.image_url %>
-  <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>

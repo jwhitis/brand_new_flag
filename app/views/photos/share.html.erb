@@ -1,4 +1,6 @@
+<% content_for :header, pre_order_button(class: "hidden-xs") %>
+
 <h2>Share!</h2>
 <%= image_tag @photo.image_url %>
-<%= link_to "Download Photo", download_photo_path(@photo) %>
+<%= link_to "Download My Photo", download_photo_path(@photo) %>
 <%= link_to "Create Another Photo", root_path %>

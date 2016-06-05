@@ -1,0 +1,103 @@
+body {
+  font-family: $body-font;
+  font-weight: lighter;
+  color: #555555;
+  background-image: url(http://res.cloudinary.com/dxb4raa6b/image/upload/v1465045872/background.png);
+}
+
+div.container {
+  max-width: 830px;
+}
+
+div#top-bar {
+  height: 5px;
+  position: relative;
+  z-index: 9000;
+  background: linear-gradient(to right, darken($red, 25%), $dark-red);
+  box-shadow: 0 1px 10px rgba(black, .25);
+}
+
+header {
+  height: 240px;
+  margin: 0 -15px;
+  position: relative;
+  border: 3px solid rgba(black, .25);
+  background-image: url(http://res.cloudinary.com/dxb4raa6b/image/upload/v1465044103/banner_mini.jpg);
+  background-size: 580px;
+  background-position: right top;
+  background-origin: border-box;
+
+  div.callout {
+    width: calc(100% - 30px);
+    padding: 10px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    text-align: center;
+    color: darken($blue, 25%);
+    background-color: rgba(white, .9);
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: $dark-red;
+    }
+
+    p {
+      margin: 0;
+
+      &:first-of-type {
+        margin-bottom: 5px;
+      }
+
+      sup {
+        text-decoration: underline;
+      }
+
+      b {
+        color: $dark-red;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  a.button {
+    width: auto;
+    position: absolute;
+    bottom: 70px;
+    right: 25px;
+    background-color: $dark-red;
+  }
+
+  &.mini {
+    height: 55px;
+
+    a.button {
+      top: 15px;
+      bottom: auto;
+      left: 25px;
+      right: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    height: 400px;
+    margin: 0;
+    background-size: cover;
+
+    div.callout {
+      width: 50%;
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &.mini {
+      height: 75px;
+    }
+  }
+}

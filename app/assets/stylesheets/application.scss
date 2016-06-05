@@ -3,17 +3,55 @@
 @import "font-awesome";
 @import "variables";
 @import "layouts";
-@import "home";
+@import "flash";
+@import "photos";
 
-div.photo-preview {
-  width: 400px;
-  height: 400px;
+h2 {
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-family: $display-font;
+  font-size: 34px;
+  text-transform: uppercase;
+  color: $dark-red;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+input, button:not(.close), a.button {
+  width: 100%;
+  height: 40px;
+  padding: 10px 15px;
+  display: inline-block;
+  border: 1px solid rgba(black, .15);
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 20px;
+  background-color: #EEEEEE;
+}
+
+input[type="submit"], button:not(.close), a.button {
+  text-align: center;
+  border-width: 0 0 2px 0;
+  font-family: $display-font;
+  text-transform: uppercase;
+  color: white;
+  background-color: $grey;
+  box-shadow: 0 1px 3px rgba(black, .25);
+
+  i.fa {
+    margin-right: 6px;
+    font-size: 20px;
+    line-height: 19px;
+  }
+}
+
+div.photo {
+  border: 2px solid rgba(black, .25);
+  border-radius: 10px;
   background-size: cover;
   background-position: center;
-
-  img.overlay {
-    &:not(:first-child) {
-      display: none;
-    }
-  }
+  background-origin: border-box;
+  box-shadow: 0 1px 10px rgba(black, .25);
 }

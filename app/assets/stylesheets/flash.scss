@@ -1,0 +1,30 @@
+div.flash {
+  width: 100%;
+  padding: 10px 35px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border: none;
+  border-bottom: 1px solid rgba(black, .15);
+  border-radius: 0;
+  font-weight: normal;
+  color: white;
+  box-shadow: 0 1px 10px rgba(black, .25);
+
+  &.flash-notice {
+    background-color: darken($blue, 15%);
+  }
+
+  &.flash-alert {
+    background-color: $dark-red;
+  }
+
+  button.close {
+    opacity: .8;
+
+    &:hover {
+      color: white;
+      opacity: 1;
+    }
+  }
+}
