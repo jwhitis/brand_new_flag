@@ -59,7 +59,7 @@ div#gallery {
   div.photo {
     width: 290px;
     height: 290px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 25px auto;
   }
 
   @media (min-width: 768px) {
@@ -67,7 +67,7 @@ div#gallery {
       display: inline-block;
 
       &:nth-child(odd) {
-        margin-right: 26px;
+        margin-right: 28px;
       }
     }
   }

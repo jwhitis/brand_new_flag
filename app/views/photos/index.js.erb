@@ -1,0 +1,5 @@
+$gallery = $("div#gallery");
+$gallery.append("<%=j render @photos %>");
+var offset = $gallery.data("offset");
+offset = +offset + <%= Photo::PER_REQUEST %>;
+$gallery.data("offset", offset);

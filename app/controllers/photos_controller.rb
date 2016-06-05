@@ -1,9 +1,12 @@
 class PhotosController < ApplicationController
+  before_action :find_photos, except: :download
+  before_action :initialize_photo, only: [:preview, :create]
+
+  def index
+    @photos = @photos.offset(params[:offset].to_i)
+  end
 
   def preview
-    @photo = Photo.new(photo_params)
-    @photos = Photo.all
-
     if @photo.invalid?
       flash[:alert] = "Please enter your email address and choose an image in one of these formats: #{extension_white_list}"
       render "home/index"
@@ -11,9 +14,6 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
-    @photos = Photo.all
-
     if @photo.save
       @photos = @photos.where.not(id: @photo.id)
       render :share
@@ -30,6 +30,14 @@ class PhotosController < ApplicationController
   end
 
   private
+
+  def find_photos
+    @photos = Photo.most_recent.per_request
+  end
+
+  def initialize_photo
+    @photo = Photo.new(photo_params)
+  end
 
   def photo_params
     params.require(:photo).permit(:creator_email, :image, :image_cache, :color)

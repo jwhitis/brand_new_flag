@@ -1,7 +1,22 @@
 <h2>Gallery</h2>
 
-<div id="gallery">
-  <% photos.each do |photo| %>
-    <div class="photo" style="background-image: url(<%= photo.image_url %>)"></div>
-  <% end %>
+<div id="gallery" data-offset="<%= Photo::PER_REQUEST %>">
+  <%= render @photos %>
 </div>
+
+<script type="text/javascript">
+  $(window).scroll(function() {
+    var position = $(window).scrollTop() + $(window).height();
+
+    if (position == $(document).height()) {
+      var offset = $("div#gallery").data("offset");
+
+      $.ajax({
+        method: "GET",
+        url: "<%= photos_path %>",
+        data: { offset: offset },
+        dataType: "script"
+      });
+    }
+  });
+</script>
