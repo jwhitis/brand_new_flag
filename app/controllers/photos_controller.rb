@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
 
   def preview
     if @photo.invalid?
-      flash[:alert] = "Please enter your email address and choose an image in one of these formats: #{extension_white_list}"
+      flash[:alert] = "Please enter your email address and pick a photo in one of these formats: #{extension_white_list}"
       render "home/index"
     end
   end
