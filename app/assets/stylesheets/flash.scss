@@ -21,6 +21,7 @@ div.flash {
 
   button.close {
     opacity: .8;
+    transition: opacity .3s;
 
     &:hover {
       color: white;

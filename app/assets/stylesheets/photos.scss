@@ -30,7 +30,6 @@ form#new_photo {
 
   button, input[type="submit"] {
     background-color: $dark-red;
-    transition: opacity .3s;
 
     &.disabled {
       opacity: .25;
