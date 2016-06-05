@@ -101,3 +101,15 @@ header {
     }
   }
 }
+
+footer {
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 16px;
+
+  a, a:hover, a:focus {
+    font-weight: normal;
+    text-decoration: underline;
+    color: $dark-red;
+  }
+}
