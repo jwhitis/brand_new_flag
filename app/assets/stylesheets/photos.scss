@@ -47,7 +47,7 @@ div#example-photo {
   width: 250px;
   height: 250px;
   margin: 0 auto;
-  background-image: image-url("example_photo.jpg");
+  background-image: cloudinary-url("example_photo.jpg");
   transform: rotate(10deg);
   backface-visibility: hidden;
 }

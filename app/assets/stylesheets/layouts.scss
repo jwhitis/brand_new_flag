@@ -2,7 +2,7 @@ body {
   font-family: $body-font;
   font-weight: lighter;
   color: #555555;
-  background-image: image-url("background.png");
+  background-image: cloudinary-url("background.png");
 }
 
 div.container {
@@ -22,7 +22,7 @@ header {
   margin: 0 -15px;
   position: relative;
   border: 3px solid rgba(black, .25);
-  background-image: image-url("banner_mini.jpg");
+  background-image: cloudinary-url("banner_mini.jpg");
   background-size: 580px;
   background-position: right top;
   background-origin: border-box;
