@@ -6,7 +6,12 @@
   <div class="col-sm-7 clearfix">
     <div class="step">
       <%= star(1) %>
-      <%= link_to "Download My Photo", download_photo_path(@photo), class: "button" %>
+      <% if browser.device.mobile? %>
+        <%= link_to "Download My Photo", @photo.image_url, target: "_blank", class: "button" %>
+        This will open your photo in a new browser tab. Hold your finger down on the photo and click "Save Image". Then, close the tab.
+      <% else %>
+        <%= link_to "Download My Photo", download_photo_path(@photo), class: "button" %>
+      <% end %>
     </div>
 
     <h3>For Facebook:</h3>
@@ -16,7 +21,7 @@
     </div>
     <div class="step">
       <%= star(3) %>
-      Click "Upload Photo", and select the photo you just downloaded. It should look like brand_new_flag_20160605094226.png. Then, click "Save".
+      Click "Upload Photo" and select the photo you just downloaded. It should look like brand_new_flag_20160605094226.png. Then, click "Save".
     </div>
 
     <h3>For Twitter:</h3>
