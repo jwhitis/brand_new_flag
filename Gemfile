@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'browser'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'font-awesome-rails'
