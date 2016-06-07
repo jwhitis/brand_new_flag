@@ -66,7 +66,7 @@ div#gallery {
     div.photo {
       display: inline-block;
 
-      &:nth-child(odd) {
+      &:nth-child(odd):not(:last-child) {
         margin-right: 28px;
       }
     }
