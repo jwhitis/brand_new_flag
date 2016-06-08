@@ -107,9 +107,35 @@ form#preview-photo {
     }
   }
 
+  div.checkbox {
+    margin: 20px 0 25px 0;
+    font-size: 18px;
+
+    label {
+      padding: 0;
+    }
+
+    span.fa-stack {
+      font-size: 16px;
+
+      i.fa-check {
+        top: -2px;
+        opacity: 0;
+        transition: opacity .3s;
+      }
+    }
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked + span.fa-stack i.fa-check {
+        opacity: 1;
+      }
+    }
+  }
+
   input[type="submit"] {
     width: 180px;
-    margin-top: 30px;
     background-color: $dark-red;
   }
 
@@ -123,7 +149,6 @@ form#preview-photo {
   a.button {
     width: 180px;
     margin-bottom: 15px;
-    background-color: $grey;
   }
 }
 

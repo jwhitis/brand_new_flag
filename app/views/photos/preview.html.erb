@@ -15,6 +15,14 @@
       <button type="button" class="selector" data-color="purple"></button>
       <button type="button" class="selector" data-color="grey"></button>
 
+      <div class="checkbox">
+        <%= f.label :gallery do %>
+          <%= f.check_box :gallery %>
+          <%= fa_stacked_icon("check", base: "square-o") %>
+          Add photo to the public gallery
+        <% end %>
+      </div>
+
       <%= f.submit "Save My Photo" %>
       <div class="separator">- OR -</div>
       <%= link_to "Start Over", root_path, class: "button" %>

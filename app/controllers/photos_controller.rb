@@ -40,7 +40,7 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:creator_email, :image, :image_cache, :color)
+    params.require(:photo).permit(:creator_email, :image, :image_cache, :color, :gallery)
   end
 
   def extension_white_list
