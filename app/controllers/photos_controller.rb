@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
   private
 
   def find_photos
-    @photos = Photo.most_recent.per_request
+    @photos = Photo.gallery.most_recent.per_request
   end
 
   def initialize_photo

@@ -7,6 +7,7 @@ class Photo < ActiveRecord::Base
 
   validates_presence_of :creator_email, :image
 
+  scope :gallery, -> { where(gallery: true) }
   scope :most_recent, -> { order(created_at: :desc) }
   scope :per_request, -> { limit(PER_REQUEST) }
 
