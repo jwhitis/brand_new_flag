@@ -45,7 +45,7 @@ input[type="submit"], button:not(.close), a.button {
   font-family: $display-font;
   text-transform: uppercase;
   color: white;
-  background-color: $grey;
+  background-color: #999999;
   box-shadow: 0 1px 3px rgba(black, .25);
   transition: opacity .3s;
 
@@ -61,7 +61,7 @@ input[type="submit"], button:not(.close), a.button {
 }
 
 div#tour-dates {
-  td.bit-tickets a, label.bit-uiButton {
+  a.bit-buy-tix, label.bit-uiButton {
     @extend a.button;
     height: 30px;
     margin: 0;
@@ -74,7 +74,7 @@ div#tour-dates {
     }
   }
 
-  td.bit-tickets a {
+  a.bit-buy-tix {
     background-color: $dark-red;
   }
 
