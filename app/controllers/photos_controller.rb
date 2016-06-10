@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
 
   def preview
     if @photo.invalid?
-      flash[:alert] = "Please enter your email address and pick a photo in one of these formats: #{extension_white_list}"
+      flash.now[:alert] = "Please enter your email address and pick a photo in one of these formats: #{extension_white_list}"
       render "home/index"
     end
   end
@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
       @photos = @photos.where.not(id: @photo.id)
       render :share
     else
-      flash[:alert] = "Oops! Something went wrong. Please try again."
+      flash.now[:alert] = "Oops! Something went wrong. Please try again."
       render "home/index"
     end
   end
