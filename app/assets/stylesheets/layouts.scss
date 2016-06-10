@@ -9,12 +9,34 @@ div.container {
   max-width: 830px;
 }
 
-div#top-bar {
-  height: 5px;
+nav {
   position: relative;
   z-index: 9000;
-  background: linear-gradient(to right, darken($red, 25%), $dark-red);
+  text-align: center;
+  font-family: $display-font;
+  color: white;
+  background: linear-gradient(to bottom, #333333, darken(#333333, 5%));
   box-shadow: 0 1px 10px rgba(black, .25);
+
+  a {
+    margin: 5px 0;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    transition: opacity .3s;
+
+    &:hover, &:focus {
+      color: white;
+      opacity: .8;
+    }
+  }
+
+  i.fa {
+    margin: 0 6px;
+    position: relative;
+    top: -1px;
+    font-size: 12px;
+  }
 }
 
 header {
@@ -129,8 +151,15 @@ header {
 
 footer {
   margin-bottom: 25px;
+  padding: 0 15px;
   text-align: center;
   font-size: 16px;
+
+  i.fa {
+    margin: 0 6px;
+    font-size: 14px;
+    color: #333333;
+  }
 
   a, a:hover, a:focus {
     font-weight: normal;

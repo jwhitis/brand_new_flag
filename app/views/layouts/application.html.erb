@@ -15,7 +15,13 @@
   <%= render "layouts/facebook_js" %>
   <%= render "layouts/flash" %>
 
-  <div id="top-bar"></div>
+  <nav>
+    <%= link_to "Home", root_path %>
+    <%= fa_icon("star") %>
+    <%= link_to "Tour Dates", tour_dates_path %>
+    <%= fa_icon("star") %>
+    <%= link_to "TCG Store", "https://twocowgarage1.bandcamp.com" %>
+  </nav>
 
   <div class="container">
     <header class="<%= "mini" unless header_has_callout? %>">
@@ -27,6 +33,11 @@
     <%= render "photos/gallery", photos: @photos %>
   </div>
 
-  <footer>Made by <%= mail_to "jack.whitis@gmail.com", "Jack Whitis" %></footer>
+  <footer>
+    &copy; <%= Time.now.year %> Two Cow Garage
+    <br class="visible-xs-block" />
+    <%= fa_icon("star", class: "hidden-xs") %>
+    <%= mail_to "hello@twocowgarage.net" %>
+  </footer>
 </body>
 </html>
