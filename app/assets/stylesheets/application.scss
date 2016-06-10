@@ -7,7 +7,7 @@
 @import "photos";
 
 h2 {
-  margin: 0 0 20px 0;
+  margin: 20px 0;
   text-align: center;
   font-family: $display-font;
   font-size: 34px;
@@ -67,6 +67,7 @@ div.star {
     position: absolute;
     left: 16px;
     line-height: 40px;
+    font-weight: normal;
     color: white;
   }
 }
