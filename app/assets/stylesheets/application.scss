@@ -20,6 +20,12 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+small {
+  margin: 5px auto 20px auto;
+  display: block;
+  color: #777777;
+}
+
 input[type="email"], input[type="submit"], button:not(.close), a.button {
   width: 100%;
   height: 40px;

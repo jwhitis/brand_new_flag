@@ -1,12 +1,5 @@
-small.disclaimer {
-  margin-top: 5px;
-  display: block;
-  color: #777777;
-}
-
 form#new_photo {
   width: calc(100% - 50px);
-  margin-top: 20px;
   float: right;
 
   div.form-group {
@@ -154,7 +147,7 @@ form#preview-photo {
 div#photo-preview {
   width: 290px;
   height: 290px;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   position: relative;
 
   img.overlay {
@@ -167,6 +160,11 @@ div#photo-preview {
     &:not(:first-child) {
       opacity: 0;
     }
+  }
+
+  & + small {
+    width: 290px;
+    text-align: center;
   }
 }
 
