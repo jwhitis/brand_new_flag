@@ -5,6 +5,7 @@
 @import "layouts";
 @import "flash";
 @import "photos";
+@import "tour_dates";
 
 h2 {
   margin: 20px 0;
@@ -50,6 +51,29 @@ input[type="submit"], button:not(.close), a.button {
     margin-right: 6px;
     font-size: 20px;
     line-height: 19px;
+  }
+}
+
+div#tour-dates {
+  td.bit-tickets a, label.bit-uiButton {
+    @extend a.button;
+    height: 30px;
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 20px !important;
+
+    a {
+      color: white;
+    }
+  }
+
+  td.bit-tickets a {
+    background-color: $dark-red;
+  }
+
+  label.bit-uiButton {
+    background: $dark-blue;
   }
 }
 

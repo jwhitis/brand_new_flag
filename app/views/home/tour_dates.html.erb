@@ -1,0 +1,17 @@
+<% content_for :header, pre_order_button(class: "hidden-xs") %>
+
+<h2>Tour Dates</h2>
+<div id="tour-dates"></div>
+
+<%= javascript_include_tag "http://widget.bandsintown.com/javascripts/bit_widget.js" %>
+<script type="text/javascript">
+  new BIT.Widget({
+    artist: "Two Cow Garage",
+    text_color: "#555555",
+    link_color: "#C1223C",
+    separator_color: "#CCCCCC",
+    notify_me: false,
+    share_links: false,
+    div_id: "tour-dates"
+  }).insert_events();
+</script>

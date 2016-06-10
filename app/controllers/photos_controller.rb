@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :find_photos, except: :download
+  skip_before_action :find_photos, only: :download
   before_action :initialize_photo, only: [:preview, :create]
 
   def index
@@ -30,10 +30,6 @@ class PhotosController < ApplicationController
   end
 
   private
-
-  def find_photos
-    @photos = Photo.gallery.most_recent.per_request
-  end
 
   def initialize_photo
     @photo = Photo.new(photo_params)

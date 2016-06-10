@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :photos, only: [:index, :create] do
     get :download, on: :member
   end
+  get "tour-dates", to: "home#tour_dates"
 end

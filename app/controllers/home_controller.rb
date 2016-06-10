@@ -2,7 +2,9 @@ class HomeController < ApplicationController
 
   def index
     @photo = Photo.new
-    @photos = Photo.gallery.most_recent.per_request
+  end
+
+  def tour_dates
   end
 
 end
