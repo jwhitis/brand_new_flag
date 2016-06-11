@@ -16,6 +16,7 @@ class PhotosController < ApplicationController
   def create
     if @photo.save
       @photos = @photos.where.not(id: @photo.id)
+      flash.now[:notice] = "Thanks for participating! You've been entered into the drawing for a free signed album."
       render :share
     else
       flash.now[:alert] = "Oops! Something went wrong. Please try again."
