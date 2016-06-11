@@ -3,15 +3,23 @@
 <h2>Tour Dates</h2>
 <div id="tour-dates"></div>
 
-<%= javascript_include_tag "http://widget.bandsintown.com/javascripts/bit_widget.js" %>
 <script type="text/javascript">
-  new BIT.Widget({
-    artist: "Two Cow Garage",
-    text_color: "#555555",
-    link_color: "#C1223C",
-    separator_color: "#CCCCCC",
-    notify_me: false,
-    share_links: false,
-    div_id: "tour-dates"
-  }).insert_events();
+  if ($("script#bit-js").length == 0) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "http://widget.bandsintown.com/javascripts/bit_widget.js";
+    script.id = "bit-js";
+    script.onload = function() {
+      new BIT.Widget({
+        artist: "Two Cow Garage",
+        text_color: "#555555",
+        link_color: "#C1223C",
+        separator_color: "#CCCCCC",
+        notify_me: false,
+        share_links: false,
+        div_id: "tour-dates"
+      }).insert_events();
+    }
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
 </script>
