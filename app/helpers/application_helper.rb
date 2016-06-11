@@ -4,7 +4,7 @@ module ApplicationHelper
     content_for(:header) =~ /callout/
   end
 
-  def pre_order_button options = {}
+  def pre_order_link options = {}
     options[:class] = "button " + options[:class].to_s
 
     link_to "javascript:void(0)", options do
@@ -15,6 +15,25 @@ module ApplicationHelper
   def star number
     content_tag(:div, class: "star") do
       fa_icon("star") + content_tag(:span, number)
+    end
+  end
+
+  def facebook_share_link
+    query_params = { app_id: AppConfig["facebook_app_id"], href: "http://www.twocowgarage.net" }
+    url = "https://www.facebook.com/dialog/share?#{query_params.to_query}"
+    share_link(url, "facebook")
+  end
+
+  def twitter_share_link
+    text = "The new Two Cow Garage album \"Brand New Flag\" is almost here! @twocowgarage1"
+    query_params = { text: text, url: "http://www.twocowgarage.net", hashtags: "TwoCowGarage,BrandNewFlag" }
+    url = "https://twitter.com/intent/tweet?#{query_params.to_query}"
+    share_link(url, "twitter")
+  end
+
+  def share_link url, icon
+    link_to url, target: "_blank", class: "button" do
+      fa_icon(icon) + "Share"
     end
   end
 

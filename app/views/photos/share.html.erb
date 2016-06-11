@@ -1,4 +1,4 @@
-<% content_for :header, pre_order_button(class: "hidden-xs") %>
+<% content_for :header, pre_order_link(class: "hidden-xs") %>
 
 <div id="share" class="row">
   <h2>Share Your Photo</h2>
@@ -37,6 +37,10 @@
 
   <div class="col-sm-5">
     <div class="photo" style="background-image: url(<%= @photo.image_url %>)"></div>
+    <div class="share-links">
+      <%= facebook_share_link %>
+      <%= twitter_share_link %>
+    </div>
     <%= link_to "Create Another Photo", root_path, class: "button" %>
   </div>
 </div>
