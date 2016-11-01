@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def twitter_share_link
-    text = "The new Two Cow Garage album \"Brand New Flag\" is almost here! @twocowgarage1"
+    text = "The new Two Cow Garage album \"Brand New Flag\" is here! @twocowgarage1"
     query_params = { text: text, url: "http://www.twocowgarage.net", hashtags: "TwoCowGarage,BrandNewFlag" }
     url = "https://twitter.com/intent/tweet?#{query_params.to_query}"
     share_link(url, "twitter")
