@@ -1,14 +1,14 @@
 <% content_for :header do %>
+  <iframe src="https://www.youtube-nocookie.com/embed/qxFc_j2kjcc?rel=0&amp;controls=0&amp;showinfo=0"
+    frameborder="0" allowfullscreen class="hidden-xs"></iframe>
+
   <div class="callout">
     <h1>"Brand New Flag"</h1>
-    <p>Available October 14</p>
-    <p>
-      Show your support for <b>TCG</b> by creating a custom profile photo.
-      One fan will receive a free signed copy of the new album.&nbsp;**
-    </p>
+    <p>In Stores Now</p>
+    <p>Show your support for <b>TCG</b> by creating a custom profile photo.</p>
   </div>
 
-  <%= pre_order_link(class: "hidden-xs") %>
+  <%= order_link(class: "hidden-xs") %>
 
   <div class="social-links hidden-xs">
     <%= link_to "https://www.facebook.com/Two-Cow-Garage-15327419845", target: "_blank" do %>
@@ -25,12 +25,6 @@
 
 <div class="row">
   <div class="col-sm-7 clearfix">
-    <small>
-      ** You don't have to do anything with the photo to enter the drawing.
-      Just complete the form below, and click "SAVE MY PHOTO" on the next page.
-      One entry per email address.
-    </small>
-
     <%= form_for @photo, url: preview_photo_path do |f| %>
       <div class="form-group">
         <%= star(1) %>

@@ -4,11 +4,11 @@ module ApplicationHelper
     content_for(:header) =~ /callout/
   end
 
-  def pre_order_link options = {}
+  def order_link options = {}
     options[:class] = "button " + options[:class].to_s
 
-    link_to "http://www.lastchancerecords.com/categories/Shop-Artists/Two-Cow-Garage/?sort=newest", options do
-      fa_icon("angle-double-right") + "Pre-Order the Album"
+    link_to "https://lastchancerecords.merchtable.com", options do
+      fa_icon("angle-double-right") + "Order the Album"
     end
   end
 
